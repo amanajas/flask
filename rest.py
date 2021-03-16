@@ -78,8 +78,6 @@ class Employee (Resource):
         employee_id = request.args.get('employee_id')
         if employee_id is None:
             return {"error": "Employee ID not defined"}
-        if not employee_id.isnumeric():
-            return {"error": "Employee ID is not a number"}
         try:
             employee_id = int(employee_id)
         except Exception as e:
